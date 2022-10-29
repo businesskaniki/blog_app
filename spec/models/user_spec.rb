@@ -1,7 +1,7 @@
 RSpec.describe User, type: :model do
   subject { User.new(name: 'Winkler') }
 
-  it 'should allow a name with at least one character' do
+  it 'should not have an empty name' do
     expect(subject).to be_valid
   end
 
@@ -10,7 +10,7 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'postscounter should be bigger or equal than 0' do
+  it 'postscounter should be greater than zero' do
     expect(subject.postscounter).to be >= 0
   end
 

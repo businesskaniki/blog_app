@@ -41,6 +41,12 @@ bundle install
 rails s
 
 ```
+### test
+
+```
+rspec
+
+```
 ## Authors
 
 👤 **Nicholas Maina**

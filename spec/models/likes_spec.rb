@@ -1,36 +1,12 @@
-Like require 'rails_helper'
+require 'rails_helper'
 
-RSpec.describe Like, type: :model do
-  before(:all) do
-    @user = User.create(
-      name: 'John Doe',
-      photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-      bio: 'Teacher from Mexico.',
-      posts_counter: 0
-    )
+RSpec.describe Comment, type: :model do
+  user1 = User.create(name: 'Winkler')
+  post1 = Post.create(title: 'My first post', author: user1)
 
-    @post = Post.create(
-      title: 'Hello World!',
-      text: 'This is my first post.',
-      comments_counter: 0,
-      likes_counter: 0,
-      author_id: @user.id
-    )
+  subject { Like.create! author: user1, post: post1 }
 
-    @like = Like.create(
-      author_id: @user.id,
-      post_id: @post.id
-    )
-  end
-  it '@like should be valid' do
-    expect(@like).to be_valid
-  end
-  it '@like should have an author' do
-    @like.author = nil
-    expect(@like).to_not be_valid
-  end
-  it '@like should have a post' do
-    @like.post = nil
-    expect(@like).to_not be_valid
+  it 'likescounter increases by  1 on saving' do
+    expect(subject.post.likescounter).to be 1
   end
 end

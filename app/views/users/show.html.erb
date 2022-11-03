@@ -1,10 +1,6 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @user %>
-
-<div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
-
-  <%= button_to "Destroy this user", @user, method: :delete %>
-</div>
+<h1>users#show</h1>
+<p>Here is a list of user</p>
+<tr>
+  <td><%= @users.name %></td><br />
+  <td><%= @users.bio %></td>
+</tr>

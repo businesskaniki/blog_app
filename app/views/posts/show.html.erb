@@ -1,1 +1,17 @@
-<h1>show single  posts here</h1>
+<div class="page_container">
+  <div class="full_post">
+    <div class="header">
+      <p class="header_info">
+      <p class="header_comments">Comments: <%= @post.commentscounter %>,</p>
+      <p class="header_likes">Likes: <%= @post.likescounter %></p>
+    </div>
+    <p><%= @post.text %></p>
+  </div>
+  <div class="all_comments">
+    <% @post.comments.each do |c| %>
+      <td><%= c.user.name %>:</td>
+      <td>  <%= c.text %></td>
+      <br />
+    <% end %>
+  </div>
+</div>

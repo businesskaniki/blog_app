@@ -1,1 +1,28 @@
-<h1>show all  posts here</h1>
+<div class="page_container">
+  <div class="author_container">
+    <div class="image_placeholder">
+      <img src=<%= @user.photo%> alt="" >
+    </div>
+    <div class="details">
+      <h1><%= @user.name %></h1>
+      <p>Number of posts: <%= @user.postscounter %></p>
+    </div>
+  </div>
+  <% @user.most_recent_posts.each do |a| %>
+  <div class="posts">
+    <h4>
+      <a href='/users/<%=a.id %>/posts/<%=a.id%>'>
+          post id
+      </a>
+    </h4>
+    <p> <%= a.text %> </p>
+    <div class="stats">
+      <p>Comments: <%= a.commentscounter %>,</p>
+      <p>Likes: <%= a.likescounter %></p>
+    </div>
+    <% a.five_most_recent_posts.each do |comment| %>
+      <li><%= comment.author.name %> : <%= comment.text%></li>
+    <% end %>
+  </div>
+  <% end %>
+</div>

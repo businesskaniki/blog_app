@@ -1,0 +1,24 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.page_container {
+    margin: 3px;
+    padding: 5px;
+}
+
+.page_container {
+    margin: 3px;
+    padding: 5px;
+}
+
+.author_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.author_container {
+    display: flex;
+    flex-direction: row;
+}

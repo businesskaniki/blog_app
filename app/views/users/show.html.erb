@@ -1,6 +1,33 @@
-<h1>users#show</h1>
-<p>Here is a list of user</p>
-<tr>
-  <td><%= @users.name %></td><br />
-  <td><%= @users.bio %></td>
-</tr>
+<div class="page_container">
+  <div class="author_container">
+    <div class="image_placeholder">
+      <img src=<%= @user.photo%> alt="" >
+    </div>
+    <div class="details">
+      <h1><%= @user.name %></h1>
+      <p>Number of posts: <%= @user.postscounter %></p>
+    </div>
+  </div>
+  <div class="bio">
+    <%= @user.bio %>
+  </div>
+  <% @user.most_recent_posts.each do |a| %>
+  <div class="posts">
+    <h4>
+      <a href='/user/<%=a.id %>/posts/<%=a.id%>'>
+        
+      </a>
+    </h4>
+    <p><%= a.text %></p>
+    <div class="stats">
+      <p>Comments: <%= a.commentscounter %>,</p>
+      <p>Likes: <%= a.likescounter %></p>
+    </div>
+  </div>
+  <% end %>
+  <button class="button">
+    <a class="link" href='/users/<%= @user.id %>/posts'>
+    See All Posts
+    </a>
+  </button>
+</div>

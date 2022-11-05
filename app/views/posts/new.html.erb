@@ -1,9 +1,11 @@
-<h1>New post</h1>
-
-<%= render "form", post: @post %>
-
-<br>
-
-<div>
-  <%= link_to "Back to posts", posts_path %>
-</div>
+<%= form_with model: @post, url: user_posts_url do |form| %>
+  <div>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+  </div>
+  <div>
+  <%= form.label :text %>
+  <%= form.text_area :text %>
+  </div>
+  <%= form.submit "Add Post" %>
+<% end %>

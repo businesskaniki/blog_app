@@ -7,9 +7,15 @@
     </div>
     <p><%= @post.text %></p>
   </div>
+  <%= link_to new_user_post_comment_path do %>
+    <button>Add Comment</button>
+  <% end %>
+  <%= form_with url: "/users/#{@post.author_id}/posts/#{@post.id}/likes", scope: :like do |f| %>
+  <%= f.submit " Add Like" %>
+  <% end %>
   <div class="all_comments">
     <% @post.comments.each do |c| %>
-      <td><%= c.user.name %>:</td>
+      <td><%= c.author.name %>:</td>
       <td>  <%= c.text %></td>
       <br />
     <% end %>

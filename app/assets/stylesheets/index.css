@@ -4,11 +4,29 @@ body {
 }
 
 .page_container {
-  margin: 3px;
   padding: 5px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.image_placeholder {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  margin-left: 100px;
+  margin-top: 30px;
 }
 
 .author_container {
+  padding: 2px;
+  margin: 2px;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+}
+
+.details {
+  margin-right: 100px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
 }

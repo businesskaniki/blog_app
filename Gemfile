@@ -2,11 +2,12 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.2'
-
+gem 'devise'
+gem 'letter_opener', '~> 1.4', '>= 1.4.1'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4'
-gem 'will_paginate', '~> 3.3'
 gem 'rails-controller-testing'
+gem 'will_paginate', '~> 3.3'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -70,7 +71,7 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
+  gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'webdrivers'
-  gem 'database_cleaner'
 end

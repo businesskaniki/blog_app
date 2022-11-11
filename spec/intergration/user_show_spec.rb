@@ -35,7 +35,7 @@ RSpec.describe 'Users index', type: :system do
     it 'shows the user most recent three posts' do
       expect(@user1.most_recent_posts.count).to be_between(0, 3)
     end
-    it 'shows the a button for viewing user posts' do
+    it 'redirects to see all' do
       expect(page).to have_link('See all Posts', href: user_posts_path(@user1))
     end
   end

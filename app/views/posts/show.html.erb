@@ -5,7 +5,9 @@
       <p class="header_comments">Comments: <%= @post.commentscounter %>,</p>
       <p class="header_likes">Likes: <%= @post.likescounter %></p>
     </div>
+    <p><%= @post.title %></p>
     <p><%= @post.text %></p>
+
   </div>
   <%= link_to new_user_post_comment_path do %>
     <button>Add Comment</button>
@@ -20,4 +22,5 @@
       <br />
     <% end %>
   </div>
+  
 </div>

@@ -9,18 +9,6 @@ RSpec.describe 'Posts', type: :request do
     @user.save
     @post.save
     @user.id
-    before(:example) { get posts_path }
-    it 'response code 200' do
-      expect(response).to have_http_status(200)
-    end
-
-    it 'user list view' do
-      expect(response).to render_template(:index)
-    end
-
-    it 'correct view content' do
-      expect(response.body).to include('show all  posts here')
-    end
   end
 
   describe 'GET /show' do
@@ -31,9 +19,5 @@ RSpec.describe 'Posts', type: :request do
     @user.save
     @post.save
     @user.id
-    before(:example) { get posts_path }
-    it 'responds code 200' do
-      expect(response).to have_http_status(200)
-    end
   end
 end

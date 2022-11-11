@@ -1,7 +1,7 @@
 <div class="page_container">
   <div class="author_container">
     <div class="image_placeholder">
-      <img src=<%= @user.photo%> alt="" >
+    <img src=<%= @user.photo%> alt="" >
     </div>
     <div class="details">
       <h1><%= @user.name %></h1>
@@ -9,12 +9,15 @@
     </div>
   </div>
   <% @user.most_recent_posts.each do |a| %>
+    <p> show all  posts here </p>
   <div class="posts">
     <h4>
       <a href='/users/<%=a.id %>/posts/<%=a.id%>'>
           post id
       </a>
     </h4>
+    <p> <%= a.title %> </p>
+
     <p> <%= a.text %> </p>
     <div class="stats">
       <p>Comments: <%= a.commentscounter %>,</p>
@@ -28,4 +31,5 @@
   <%= link_to new_user_post_path do %>
     <button>Add Post</button>
   <% end %>
+
 </div>
